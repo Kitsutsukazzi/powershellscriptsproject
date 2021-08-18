@@ -29,7 +29,7 @@ $xl = New-Object -ComObject Excel.Application
 $xl.Visible = $true
 $wb = $xl.Workbooks.Open($filepath)
 
-# Prendi la prima colonna
+# Prendi la prima colonna e la seconda
 $data = $wb.Worksheets['Foglio1'].UsedRange.Rows.Columns[1].Value2
 $data2 = $wb.Worksheets['Foglio1'].UsedRange.Rows.Columns[2].Value2
 
@@ -42,10 +42,11 @@ Remove-Variable xl,wb # Rimuovi le due variabili create
 
 # display results
 $data | select -skip 1 # Rimuove il titolo sopra
+$data2 | select -skip 2 
 
 # Variabili degli IP
 $Rows = $data -split [Environment]::NewLine #Grazie iRon modo corretto per dividere IP
-$RowsVerifica = $data2 -split [Environment]::NewLine
+$RowsVerifica = $data2 -split [Environment]::NewLine #Grazie iRon modo corretto per dividere IP x2
 
 function Show-Menu
 {
