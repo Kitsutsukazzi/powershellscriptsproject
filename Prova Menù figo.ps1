@@ -8,7 +8,7 @@
             Write-Host -ForegroundColor DarkCyan " Menù Cambio IP"
         Write-Host -ForegroundColor DarkCyan -NoNewline "`n["; Write-Host -NoNewline "2"; Write-Host -ForegroundColor DarkCyan -NoNewline "]"; `
             Write-Host -ForegroundColor DarkCyan " Menù Cambio Nome"
-        $mainMenu = Read-Host "`nSelection (leave blank to quit)"
+        $mainMenu = Read-Host "`nSelection (Lascia bianco per uscire)"
         # Parte Il SubMenù1
         if($mainMenu -eq 1){
             subMenu1
